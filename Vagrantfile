@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./wp-content", "/home/core/share", id: "core", :nfs => true,  :mount_options => ['nolock,vers=3,udp']
 
 	config.vm.provision :shell, :privileged => false, :inline => <<-EOS
-		docker run -d -e MYSQL_PASS="PASSWORD" --name db -p 3306:3306 tutum/mysql:5.5
+		docker run -d -e MYSQL_PASS="PASSWORD" --name db -p 3306:3306 tutum/mysql:5.6
 		docker run -d --link db:db -e DB_PASS="PASSWORD" -v /home/core/share:/app/wp-content -p 80:80 tutum/wordpress-stackable
     EOS
 
