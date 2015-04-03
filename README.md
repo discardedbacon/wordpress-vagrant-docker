@@ -14,8 +14,7 @@ The template Vagrantfile file allows you to easily launch a single CoreOS virtua
 1. Install Vagrant and VirtualBox.
 2. Clone the repository.
  ```
- git clone https://github.com/discardedbacon/wordpress-vagrant-docker/
- cd coreos-vagrant
+ git clone https://github.com/discardedbacon/wordpress-vagrant-docker/ && cd wordpress-vagrant-docker
  ```
 3. Start up and connect to VM via SSH
 ```
