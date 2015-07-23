@@ -8,10 +8,11 @@ The template Vagrantfile file allows you to easily launch a single CoreOS virtua
 
 - [VirtualBox](https://www.virtualbox.org/) 4.3.10 or greater
 - [Vagrant](https://www.vagrantup.com/) 1.6 or greater
+- [Vagrant Hostmanager] (https://github.com/smdahlen/vagrant-hostmanager)
 
 ## How to Use
 
-1. Install Vagrant and VirtualBox.
+1. Install Vagrant, Vagrant Hostmanager Plugin, and VirtualBox.
 2. Clone the repository.
  ```
  git clone https://github.com/discardedbacon/wordpress-vagrant-docker/ && cd wordpress-vagrant-docker
