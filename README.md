@@ -22,10 +22,11 @@ The template Vagrantfile file allows you to easily launch a single CoreOS virtua
 vagrant up
 vagrant ssh
 ```
-### Host IP
+### Hostname and Host IP
 
-To change the Local host IP address, edit the line below. 
+To change the local hostname and host IP address, edit the line below. 
 ```
+config.vm.hostname = "vagrant.wordpress.dev"
 config.vm.network "private_network", ip: "172.17.8.150"
 ```
 

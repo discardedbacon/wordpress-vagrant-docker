@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
 		config.vbguest.auto_update = false
 	end
 
-  	#host ip
+  	#hostname & host ip 
   	config.vm.hostname = "vagrant.wordpress.dev"
   	ip = "172.12.8.150"
   	config.vm.network :private_network, ip: ip
