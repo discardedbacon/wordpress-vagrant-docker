@@ -49,11 +49,11 @@ Vagrant.configure("2") do |config|
   	config.vm.network :private_network, ip: ip
 
 	#enabling NFS for sharing the host machine into the coreos-vagrant VM
-    config.vm.synced_folder "./data", "/home/core/share", id: "core", :nfs => true,  :mount_options => ['nolock,vers=3,udp']
+    config.vm.synced_folder "./data", "/home/core/data", id: "core", :nfs => true,  :mount_options => ['nolock,vers=3,udp']
 
 	config.vm.provision :shell, :privileged => false, :inline => <<-EOS
 		docker run --name wordpressdb -e MYSQL_ROOT_PASSWORD=PASSWORD -e MYSQL_DATABASE=wordpress -d mysql:5.7
-    	docker run -e WORDPRESS_DB_PASSWORD=PASSWORD -d --name wordpress --link wordpressdb:mysql -p 80:80 -v /home/core/share:/var/www/html wordpress
+    	docker run -e WORDPRESS_DB_PASSWORD=PASSWORD -d --name wordpress --link wordpressdb:mysql -p 80:80 -v /home/core/data:/var/www/html wordpress
     EOS
 
 end
