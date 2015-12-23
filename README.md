@@ -36,7 +36,7 @@ To change the shared folder setup, edit the line below.
 By default, the latest version of WordPress will be installed in "./data/".
 
 ```
-config.vm.synced_folder "./data", "/home/core/share", id: "core", :nfs => true,  :mount_options => ['nolock,vers=3,udp']
+config.vm.synced_folder "./data", "/home/core/data", id: "core", :nfs => true,  :mount_options => ['nolock,vers=3,udp']
 ```
 ### Provisioning
 
@@ -45,7 +45,7 @@ Shell scripts will run at the end of the setup process. Edit the MySQL password 
 ```
 config.vm.provision :shell, :privileged => false, :inline => <<-EOS
 	docker run --name wordpressdb -e MYSQL_ROOT_PASSWORD=PASSWORD -e MYSQL_DATABASE=wordpress -d mysql:5.7
-    docker run -e WORDPRESS_DB_PASSWORD=PASSWORD -d --name wordpress --link wordpressdb:mysql -p 80:80 -v /home/core/share:/var/www/html wordpress
+    docker run -e WORDPRESS_DB_PASSWORD=PASSWORD -d --name wordpress --link wordpressdb:mysql -p 80:80 -v /home/core/data:/var/www/html wordpress
 EOS
 ```
 
