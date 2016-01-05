@@ -46,8 +46,8 @@ Vagrant.configure("2") do |config|
   end
 
   #hostname & host ip 
-  config.vm.hostname = "test.wordpress.dev"
-  ip = "172.12.8.152"
+  config.vm.hostname = "vagrant.wordpress.dev"
+  ip = "172.12.8.150"
   config.vm.network :private_network, ip: ip
 
   #enabling NFS for sharing the host machine into the coreos-vagrant VM

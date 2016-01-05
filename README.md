@@ -27,7 +27,7 @@ vagrant ssh
 To change the local hostname and host IP address, edit the line below. 
 ```
 config.vm.hostname = "vagrant.wordpress.dev"
-config.vm.network "private_network", ip: "172.17.8.152"
+config.vm.network "private_network", ip: "172.17.8.150"
 ```
 
 ### Shared Folder Setup
