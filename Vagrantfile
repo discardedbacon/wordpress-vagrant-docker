@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
   #provisioning to run docker commands, launch two containers
   config.vm.provision "docker" do |d|
     d.run "wordpressdb", image: "mysql:5.7", args: "-e MYSQL_ROOT_PASSWORD=PASSWORD -e MYSQL_DATABASE=wordpress -d"
-    d.run "wordpress", image: "wordpress", args: "-e WORDPRESS_DB_PASSWORD=PASSWORD -d --name wordpress --link wordpressdb:mysql -p 80:80 -v /home/core/share:/var/www/html"
+    d.run "wordpress", image: "wordpress", args: "-e WORDPRESS_DB_PASSWORD=PASSWORD -d --name wordpress --link wordpressdb:mysql -p 80:80 -v /home/core/data:/var/www/html"
   end
 
 end
